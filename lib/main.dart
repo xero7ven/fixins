@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'app/router.dart';
 import 'app/theme/app_theme.dart';
 
 void main() {
@@ -10,18 +12,11 @@ class FixinsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Fixins',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            'Welcome to Fixins!',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
-    );
+      routerConfig: appRouter,
+);
   }
 }
