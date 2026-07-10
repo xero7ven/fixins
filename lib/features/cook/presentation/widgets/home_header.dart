@@ -9,22 +9,20 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: AppSpacing.lg,
-        right: AppSpacing.lg,
-        top: AppSpacing.lg,
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.lg,
+        AppSpacing.lg,
+        AppSpacing.lg,
+        0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Good morning, Alex 👋',
-            style: AppTextStyles.heading,
-          ),
+          Text('Good morning, Alex 👋', style: AppTextStyles.heading),
           const SizedBox(height: AppSpacing.sm),
           Text(
             "Here's your pantry today",
-            style: AppTextStyles.caption,
+            style: AppTextStyles.caption.copyWith(fontSize: 18),
           ),
         ],
       ),
