@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../data/repositories/recipe_repository.dart';
 import '../widgets/home_header.dart';
 import '../widgets/recipe_hero_card.dart';
+import '../widgets/why_recipe_card.dart';
 
 class CookScreen extends StatelessWidget {
   const CookScreen({super.key});
@@ -19,9 +20,16 @@ class CookScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const HomeHeader(),
-              RecipeHeroCard(recipe: recipe),
-            ],
+  const HomeHeader(),
+
+  RecipeHeroCard(recipe: recipe),
+
+  WhyRecipeCard(
+    reasons: recipe.recommendationReasons
+        .map((r) => r.message)
+        .toList(),
+  ),
+],
           ),
         ),
       ),
