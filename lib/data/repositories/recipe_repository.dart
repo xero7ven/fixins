@@ -12,7 +12,7 @@ class RecipeRepository {
       servings: 4,
       matchPercent: 96,
       estimatedSavings: 7.40,
-      imageAsset: 'assets/images/tuscan_chicken.jpg',
+      imageAsset: 'assets/images/recipes/tuscan_chicken_hero.png',
       ingredients: [
         RecipeIngredient(
           name: 'Chicken breast',
