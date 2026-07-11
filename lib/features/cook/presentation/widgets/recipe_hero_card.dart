@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_radius.dart';
+import '../../../../entities/recipe.dart';
 
 class RecipeHeroCard extends StatelessWidget {
-  const RecipeHeroCard({super.key});
+  const RecipeHeroCard({
+    super.key,
+    required this.recipe,
+  });
+
+  final Recipe recipe;
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +63,8 @@ class RecipeHeroCard extends StatelessWidget {
                 color: AppColors.primary,
                 borderRadius: BorderRadius.circular(999),
               ),
-              child: const Text(
-                "96% Match",
+              child: Text(
+                '${recipe.matchPercent}% Match',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -66,11 +72,11 @@ class RecipeHeroCard extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             left: 24,
             bottom: 60,
             child: Text(
-              "Creamy Tuscan Chicken",
+              recipe.title,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 30,
@@ -78,11 +84,11 @@ class RecipeHeroCard extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             left: 24,
             bottom: 30,
             child: Text(
-              "Recommended for tonight",
+              recipe.description,
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: 18,
