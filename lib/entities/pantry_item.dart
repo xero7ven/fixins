@@ -1,62 +1,23 @@
-enum PantryLocation {
-  pantry,
-  refrigerator,
-  freezer,
-}
-
-enum QuantityLevel {
+enum PantryQuantity {
   full,
-  plenty,
-  half,
-  low,
-  empty,
-}
-
-enum ExpirationStatus {
-  fresh,
-  useSoon,
-  expiring,
-  expired,
+ medium,
+ low,
 }
 
 class PantryItem {
   const PantryItem({
     required this.id,
     required this.name,
-    required this.category,
-    required this.location,
+    required this.categoryId,
     required this.quantity,
-    required this.expirationDate,
-    required this.imageAsset,
+    required this.daysUntilExpiration,
+    required this.recipeCount,
   });
 
   final String id;
   final String name;
-  final String category;
-
-  final PantryLocation location;
-  final QuantityLevel quantity;
-
-  final DateTime expirationDate;
-
-  final String imageAsset;
-
-  ExpirationStatus get expirationStatus {
-    final daysRemaining =
-        expirationDate.difference(DateTime.now()).inDays;
-
-    if (daysRemaining < 0) {
-      return ExpirationStatus.expired;
-    }
-
-    if (daysRemaining <= 2) {
-      return ExpirationStatus.expiring;
-    }
-
-    if (daysRemaining <= 5) {
-      return ExpirationStatus.useSoon;
-    }
-
-    return ExpirationStatus.fresh;
-  }
+  final String categoryId;
+  final PantryQuantity quantity;
+  final int daysUntilExpiration;
+  final int recipeCount;
 }

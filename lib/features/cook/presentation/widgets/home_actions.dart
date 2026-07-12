@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/theme/app_spacing.dart';
-import '../../../../shared/widgets/button/primary_button.dart';
-import '../../../../shared/widgets/button/secondary_button.dart';
+import '../../../../shared/widgets/buttons/primary_button.dart';
+import '../../../../shared/widgets/buttons/secondary_button.dart';
 
 class HomeActions extends StatelessWidget {
   const HomeActions({

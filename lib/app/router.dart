@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 
 import '../features/cook/presentation/screens/cook_screen.dart';
 import '../features/pantry/presentation/screens/pantry_screen.dart';
+import '../features/recipe_detail/presentation/screens/recipe_detail_screen.dart';
 import '../features/recipes/presentation/screens/recipes_screen.dart';
 import '../features/scan/presentation/screens/scan_screen.dart';
 import '../features/shopping/presentation/screens/shopping_screen.dart';
@@ -36,6 +37,17 @@ final appRouter = GoRouter(
           builder: (context, state) => const ShoppingScreen(),
         ),
       ],
+    ),
+
+    GoRoute(
+      path: '/recipe/:id',
+      builder: (context, state) {
+        final recipeId = state.pathParameters['id']!;
+
+        return RecipeDetailScreen(
+          recipeId: recipeId,
+        );
+      },
     ),
   ],
 );

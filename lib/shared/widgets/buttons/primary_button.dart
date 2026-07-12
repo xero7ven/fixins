@@ -1,8 +1,8 @@
 // primary_button.dart
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
-import '../../../../app/theme/app_radius.dart';
+import '../../../app/theme/app_colors.dart';
+import '../../../app/theme/app_radius.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
